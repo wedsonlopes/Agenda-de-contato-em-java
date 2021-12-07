@@ -1,15 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package visao;
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
  * @author wedson lopes
  */
-public class FormPadrao extends javax.swing.JInternalFrame {
+abstract public class FormPadrao extends javax.swing.JInternalFrame {
+    JLabel jlConsulta;
+    JTextField jtfConsulta;
 
     // Construtor
     public FormPadrao() {
@@ -18,7 +19,17 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         
         jtfId.setEnabled(false);
         HabilitaCampos(false);
-         
+        
+        // jLabel para Consulta
+        jlConsulta = new JLabel("Consulta");
+        jlConsulta.setBounds(9, 5, 50, 25);
+        jpnConsulta.add(jlConsulta);
+
+        // jTextField para consulta
+        jtfConsulta = new JTextField("");
+        jtfConsulta.setBounds(60, 5, 700, 25);
+        jpnConsulta.add(jtfConsulta);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -103,12 +114,12 @@ public class FormPadrao extends javax.swing.JInternalFrame {
                         .addComponent(jbAlterar)
                         .addGap(18, 18, 18)
                         .addComponent(jbExcluir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                         .addComponent(jbSalvar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jbCancelar)
                         .addGap(78, 78, 78)
-                        .addComponent(jbFechar)))
+                        .addComponent(jbFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
         );
         jpnBotoesLayout.setVerticalGroup(
@@ -146,10 +157,10 @@ public class FormPadrao extends javax.swing.JInternalFrame {
                     .addComponent(jtfId, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24)
-                .addGroup(jpnFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtfDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(jpnFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnFormularioLayout.setVerticalGroup(
             jpnFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,6 +221,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtfIdActionPerformed
 
     private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jbExcluirActionPerformed
+        LimpaCampo();
 
     }// GEN-LAST:event_jbExcluirActionPerformed
 

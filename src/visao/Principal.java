@@ -58,12 +58,22 @@ public class Principal extends javax.swing.JFrame {
         jmiCidade.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         jmiCidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cidade.png"))); // NOI18N
         jmiCidade.setText("Cidade");
+        jmiCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCidadeActionPerformed(evt);
+            }
+        });
         jmCadastro.add(jmiCidade);
         jmCadastro.add(jSeparator2);
 
         jmiBairro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         jmiBairro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bairro.png"))); // NOI18N
         jmiBairro.setText("Bairro");
+        jmiBairro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiBairroActionPerformed(evt);
+            }
+        });
         jmCadastro.add(jmiBairro);
         jmCadastro.add(jSeparator3);
 
@@ -110,8 +120,20 @@ public class Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jmiCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCidadeActionPerformed
+        CidadeVisao tela = new CidadeVisao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiCidadeActionPerformed
+
+    private void jmiBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBairroActionPerformed
+        BairroVisao tela = new BairroVisao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiBairroActionPerformed
+
     private void jmiContatosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jmiContatosActionPerformed
-        FormPadrao tela = new FormPadrao();
+        ContatoVisao tela = new ContatoVisao();
         jDesktop.add(tela);
         tela.setVisible(true);
     }// GEN-LAST:event_jmiContatosActionPerformed
