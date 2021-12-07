@@ -9,16 +9,23 @@ import javax.swing.JTextField;
  * @author wedson lopes
  */
 abstract public class FormPadrao extends javax.swing.JInternalFrame {
+    
+    // Metodos abstratos que serao implementados pela classe filha
+    abstract public void inicializarComponentes();
+    
+    // Criando as variaveis para os componentes do painel de Consulta
     JLabel jlConsulta;
     JTextField jtfConsulta;
 
-    // Construtor
+    // Metodos Construtor
     public FormPadrao() {
         initComponents();
         HabilitaBotoes(true);
+        HabilitaCampos(false);
+        inicializarComponentes();
         
         jtfId.setEnabled(false);
-        HabilitaCampos(false);
+        
         
         // jLabel para Consulta
         jlConsulta = new JLabel("Consulta");
@@ -281,7 +288,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbSalvar;
     private javax.swing.JPanel jpnBotoes;
     private javax.swing.JPanel jpnConsulta;
-    private javax.swing.JPanel jpnFormulario;
+    public javax.swing.JPanel jpnFormulario;
     private javax.swing.JTextField jtfDescricao;
     private javax.swing.JTextField jtfId;
     // End of variables declaration//GEN-END:variables

@@ -7,4 +7,9 @@ public class ContatoVisao  extends FormPadrao{
     setTitle("Cadastro de Contatos");
     
     }
+
+    @Override
+    public void inicializarComponentes() {
+        //Inserir os componentes aqui
+    }
 }
